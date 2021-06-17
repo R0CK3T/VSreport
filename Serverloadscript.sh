@@ -1,3 +1,19 @@
+#USB dongle detection function
+#usbiddev=`sudo cat /sys/kernel/debug/usb/devices | grep -E "^([TSPD]:.*|)$" | grep "SerialNumber=071047A2ED3C7F53"  | awk -F'=' '{print $2}'`
+
+#while true; do
+#usbiddev=`sudo cat /sys/kernel/debug/usb/devices | grep -E "^([TSPD]:.*|)$" | grep "SerialNumber=071047A2ED3C7F53"  | awk -F'=' '{print $2}'`
+#if [ "$usbiddev" = "071047A2ED3C7F53" ]; then
+#    echo "Strings are equal."
+#    echo $usbiddev
+
+#else
+#    echo "Strings are not equal."
+#    echo $usbiddev 
+#fi
+
+#done
+
 echo "Hello from remote server"
 tag=$(whiptail --inputbox "Tag :" 10 30 3>&1 1>&2 2>&3)
 serialnumb=`sudo dmidecode -t system | grep Serial  | awk -F ': ' '{ print $2 }'`
@@ -38,4 +54,9 @@ then
 else
         echo "fail sending ..."
 fi
+
+
+
+
+
 
