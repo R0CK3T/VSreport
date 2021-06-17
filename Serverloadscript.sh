@@ -26,10 +26,10 @@ else
         reportname=$tag"_"$serialnumb"_"$datentime.html
 fi
 
-#echo cpu
-#cat /proc/cpuinfo | grep -m 1  "model name"
-#echo
-#echo memory
+echo cpu
+cat /proc/cpuinfo | grep -m 1  "model name"
+echo
+echo memory
 #sudo dmidecode --type 17 | cut -c 2- | grep ^"Size: "
 #sudo dmidecode --type 17 | cut -c 2- | grep ^"Type:"
 #sudo dmidecode --type 17 | cut -c 2- | grep ^"Locator: "
@@ -39,10 +39,14 @@ fi
 #sudo nvme list -o=json | tr -d '"' | tr -d ','| grep SerialNumber | cut -c 7-
 #sudo nvme list -o=json | tr -d '"' | tr -d ','| grep PhysicalSize | cut -c 7-
 #echo
+#echo network
+#sudo lspci | egrep -i --color 'network|ethernet|wireless|wi-fi' | cut -c 9- 
+#echo
 #echo battery
 #upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep model | sed 's/  //g'
 #upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep serial | sed 's/  //g'
 #echo
+
 
 
 sudo lshw -html > /root/reports/$reportname
