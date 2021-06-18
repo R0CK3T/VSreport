@@ -40,7 +40,14 @@ echo memory
 #sudo nvme list -o=json | tr -d '"' | tr -d ','| grep PhysicalSize | cut -c 7-
 #echo
 #echo network
-#sudo lspci | egrep -i --color 'network|ethernet|wireless|wi-fi' | cut -c 9- 
+#sudo lspci | egrep -i --color 'network|ethernet|wireless|wi-fi' | cut -c 9-
+# we can check baterry health by runing the below command in a time loop for X minutes and check the diff between the values below
+#val1 = state:               charging
+#val2 = time to full:        57.3 minutes
+#val3 = percentage:          42.5469%
+# checking these three values in a span of time we can conclude if the battery is fucnctional or not, if the values didnt change after the second evaluation = 0 if the values changed increasingly its a 1
+
+
 #echo
 #echo battery
 #upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep model | sed 's/  //g'
