@@ -1,9 +1,9 @@
 #USB dongle detection function
-#usbiddev=`sudo cat /sys/kernel/debug/usb/devices | grep -E "^([TSPD]:.*|)$" | grep "SerialNumber=071047A2ED3C7F53"  | awk -F'=' '{print $2}'`
+#usbiddev=`sudo cat /sys/kernel/debug/usb/devices | grep -E "^([TSPD]:.*|)$" | grep "SerialNumber=#############"  | awk -F'=' '{print $2}'`
 
 #while true; do
-#usbiddev=`sudo cat /sys/kernel/debug/usb/devices | grep -E "^([TSPD]:.*|)$" | grep "SerialNumber=071047A2ED3C7F53"  | awk -F'=' '{print $2}'`
-#if [ "$usbiddev" = "071047A2ED3C7F53" ]; then
+#usbiddev=`sudo cat /sys/kernel/debug/usb/devices | grep -E "^([TSPD]:.*|)$" | grep "SerialNumber=###############"  | awk -F'=' '{print $2}'`
+#if [ "$usbiddev" = "##########" ]; then
 #    echo "Strings are equal."
 #    echo $usbiddev
 
