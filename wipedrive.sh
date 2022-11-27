@@ -15,7 +15,7 @@ cat /tmp/disks.txt >> /tmp/log.txt
 
 
 
-if (whiptail --title "FREE BLANCCO" --yesno "Are you sure you want to wiped the disks on this machine ? " 8 78); then
+if (whiptail --title "FREE BLANCCO" --yesno "Are you sure you want to wipe the disks on this machine ? " 8 78); then
     echo "User selected Yes, exit status was $?."
 
 while read disk; do
